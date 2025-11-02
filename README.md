@@ -61,7 +61,7 @@ Think of it as an enhanced Arduino UNO, with built-in:
 
 It connects easily to your PC via USB for programming, and once the code is uploaded, it runs automatically — checking for motion, controlling lights, and triggering sound effects.
 
-Learn more about the Kypruino at [robo.com.cy/pages/kypruino]([https://robo.com.cy/pages/kypruino](https://robo.com.cy/products/kypruino-uno-v0-6)).
+Learn more about the Kypruino at [robo.com.cy/pages/kypruino]([[https://robo.com.cy/pages/kypruino](https://robo.com.cy/products/kypruino-uno-v0-6)](https://robo.com.cy/products/kypruino-uno-v0-6)).
 
 ---
 
