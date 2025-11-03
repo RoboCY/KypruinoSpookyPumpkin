@@ -40,19 +40,44 @@ int b4  = 494;
 int g5  = 784;
 
 // Melody timing
-int desired_duration = 4000;           // Total melody duration [ms]
+int desired_duration = 30000;           // Total melody duration [ms]
 int note_duration = 200;               // Duration per note
 int numTones = round(desired_duration / note_duration);
 
-// Melody sequence (trimmed Halloween theme)
-int tones[] = {
-  cs6, fs5, fs5, cs6, fs5, fs5, cs6, fs5, d6, fs5,
-  cs6, fs5, fs5, cs6, fs5, fs5, cs6, fs5, d6, fs5,
-  c6, f5, f5, c6, f5, f5, c6, f5, cs6, f5,
-  b5, e5, e5, b5, e5, e5, b5, e5, c6, e5,
-  bf5, ef5, ef5, bf5, ef5, ef5, bf5, ef5, b5, ef5,
-  fs5, b4, b4, fs5, b4, b4, fs5, b4, g5, b4
-};
+// =====================================================
+// 🎃 Full Halloween Melody Sequence
+// Extended version (spooky loop-ready)
+// =====================================================
+int tones[] = { 
+  cs6, fs5, fs5, cs6, fs5, fs5, cs6, fs5, d6, fs5,  
+  cs6, fs5, fs5, cs6, fs5, fs5, cs6, fs5,  d6, fs5,  
+  cs6, fs5, fs5, cs6, fs5, fs5, cs6, fs5,  d6, fs5,
+ 	cs6, fs5, fs5, cs6, fs5, fs5, cs6, fs5,  d6, fs5,
+ 	cs6,  fs5, fs5, cs6, fs5, fs5, cs6, fs5,  d6, fs5,
+	cs6, fs5, fs5, cs6,  fs5, fs5, cs6, fs5,  d6, fs5,
+  c6,  f5,  f5,  c6,  f5,  f5,  c6,  f5, cs6,  f5,
+  c6,  f5,  f5,  c6,  f5,  f5,  c6,  f5, cs6,  f5,
+  cs6, fs5, fs5, cs6, fs5, fs5, cs6, fs5,  d6, fs5,
+  cs6, fs5, fs5, cs6, fs5, fs5, cs6, fs5,  d6, fs5,
+  c6,  f5,  f5,  c6,  f5,  f5,  c6,  f5, cs6,  f5,
+  c6,  f5,  f5,  c6,  f5,  f5,  c6,  f5, cs6,  f5,
+  b5,  e5,  e5,  b5,  e5,  e5,  b5,  e5,  c6,  e5,
+  b5,  e5,  e5,  b5,  e5,  e5,  b5,  e5,  c6,  e5,
+  bf5, ef5, ef5, bf5, ef5, ef5, bf5, ef5,  b5, ef5,
+  bf5, ef5, ef5, bf5, ef5, ef5, bf5, ef5,  b5, ef5,
+  b5,  e5,  e5,  b5,  e5,  e5,  b5,  e5,  c6,  e5,
+  b5,  e5,  e5,  b5,  e5,  e5,  b5,  e5,  c6,  e5,
+  bf5, ef5,  ef5, bf5, ef5, ef5, bf5, ef5,  b5, ef5,
+  bf5, ef5, ef5, bf5,  ef5, ef5, bf5, ef5,  b5, ef5,
+  fs5,  b4,  b4, fs5,  b4,  b4, fs5,  b4,  g5,  b4,
+  fs5,  b4,  b4, fs5,  b4,  b4, fs5,  b4,  g5,  b4,
+  fs5,  b4,  b4, fs5,  b4,  b4, fs5,  b4,  g5,  b4,
+  fs5,  b4,  b4, fs5,  b4,  b4, fs5,  b4,  g5,  b4,
+  fs5,  b4,  b4, fs5,  b4,  b4, fs5,  b4,  g5,  b4,
+  fs5,  b4,  b4,  fs5,  b4,  b4, fs5,  b4,  g5,  b4,
+  fs5,  b4,  b4, fs5,  b4,  b4,  fs5,  b4,  g5,  b4,
+  fs5,  b4,  b4, fs5,  b4,  b4, fs5,  b4,  g5,  b4,
+  fs5,  b4,  b4, fs5,  b4,  b4, fs5,  b4,  g5,  b4};
 
 Adafruit_NeoPixel pixels = Adafruit_NeoPixel(NUMPIXELS, PIXELS_PIN, NEO_GRB + NEO_KHZ800);
 
@@ -93,7 +118,7 @@ void loop() {
 
 void softFlicker() {
   // Gentle, random low-brightness flicker for idle mode
-  int flickerBrightness = random(10, 60); // between 10–60 brightness (out of 255)
+  int flickerBrightness = random(5, 30); // between 10–60 brightness (out of 255)
   pixels.setBrightness(flickerBrightness);
   pixels.setPixelColor(RED_PIXEL, orangeColor);
   pixels.setPixelColor(ORANGE_PIXEL, lightorangeColor);
